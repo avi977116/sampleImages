@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil & Crops - Agricultural Guide</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            color: #fff;
+        }
+        
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+         
+        /* === Search Bar Styling === */
+.search-box {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top: 20px; 
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width:280px;
+  max-width:80%;
+  padding:12px 15px;
+  border:1px solid #ccc;
+  border-radius:25px;
+  font-size:1rem;
+  outline:none;
+  transition: all .3s ease;
+}
+.search-box input:focus {
+  border-color:#4caf50;
+  box-shadow:0 0 8px rgba(76,175,80,0.3);
+}
+
+.search-box button {
+  background:#4caf50;
+  color:#fff;
+  border:none;
+  padding:12px 20px;
+  border-radius:25px;
+  font-size:1rem;
+  cursor:pointer;
+  transition: background-color .3s ease;
+}
+.search-box button:hover {
+  /* background:#43a047; */
+    background-color: #4dc724;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1597848212624-e4f8d5b73dc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ff9800;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            background-color: #f57c00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #2e7d32;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #ff9800;
+            margin: 0.5rem auto;
+        }
+        
+        .soil-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .soil-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .soil-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .soil-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .soil-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .soil-card:hover .soil-image img {
+            transform: scale(1.1);
+        }
+        
+        .soil-content {
+            padding: 1.5rem;
+        }
+        
+        .soil-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2e7d32;
+        }
+        
+        .crop-list {
+            list-style: none;
+        }
+        
+        .crop-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .crop-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .crop-list i {
+            color: #ff9800;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #ff9800;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: #ff9800;
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: #ff9800;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 2rem 0 0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .soil-grid {
+                grid-template-columns: 1fr;
+            }
+        } 
+    </style>    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                <h1>Soil & Crops</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Resources</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Search Bar -->
+    <!-- <section class="hero">
+    <div class="search-box">
+        <input type="text" id="soilSearch" placeholder="Search soil types...">
+        <button id="searchBtn">Search</button>
+    </div> -->
+
+    <div class="search-box">
+    <input type="text" id="soilSearch" placeholder="Search soil types...">
+    <button id="searchBtn">Search</button>
+    </div>
+   
+    
+
+
+
+</section>
+    <!-- Hero Section  -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Find the Perfect Soil for Your Crops</h2>
+            <p>Discover which soil types are best suited for different crops to maximize your agricultural yield and promote sustainable farming practices.</p>
+            <a href="#soil-types" class="cta-button">Explore Soil Types <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+    <!-- Main Content -->
+    <main class="container" id="soil-types">
+        <h2 class="section-title">Soil Types & Suitable Crops</h2>
+        
+        <div class="soil-grid">
+            <!-- Loamy Soil -->
+            <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/image.png" alt="Rich loamy soil with good texture for farming">
+                </div>
+                <div class="soil-content">
+                    <h3>Loamy Soil</h3>
+                    <p>Loamy soil is a balanced mixture of sand, silt, and clay. It has good drainage and moisture retention.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Wheat</li>
+                        <li><i class="fas fa-check-circle"></i> Cotton</li>
+                        <li><i class="fas fa-check-circle"></i> Sugarcane</li>
+                        <li><i class="fas fa-check-circle"></i> Oilseeds</li>
+                        <li><i class="fas fa-check-circle"></i> Vegetables</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Clay Soil -->
+            <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/image.png" alt="Clay soil with dense texture and moisture retention">
+                </div>
+                <div class="soil-content">
+                    <h3>Clay Soil</h3>
+                    <p>Clay soil has fine particles that hold water well but can be heavy and poorly drained.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Rice</li>
+                        <li><i class="fas fa-check-circle"></i> Lettuce</li>
+                        <li><i class="fas fa-check-circle"></i> Broccoli</li>
+                        <li><i class="fas fa-check-circle"></i> Cabbage</li>
+                        <li><i class="fas fa-check-circle"></i> Kale</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Sandy Soil -->
+            <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/image3.png"alt="Sandy soil with coarse texture and good drainage">
+                </div>
+                <div class="soil-content">
+                    <h3>Sandy Soil</h3>
+                    <p>Sandy soil has large particles, drains quickly, and warms up fast in spring.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Watermelons</li>
+                        <li><i class="fas fa-check-circle"></i> Peanuts</li>
+                        <li><i class="fas fa-check-circle"></i> Potatoes</li>
+                        <li><i class="fas fa-check-circle"></i> Carrots</li>
+                        <li><i class="fas fa-check-circle"></i> Onions</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Silt Soil -->
+            <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/image4.png" alt="Silt soil with fine texture and fertility">
+                </div>
+                <div class="soil-content">
+                    <h3>Silt Soil</h3>
+                    <p>Silt soil has medium-sized particles, holds moisture well, and is very fertile.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Wheat</li>
+                        <li><i class="fas fa-check-circle"></i> Oats</li>
+                        <li><i class="fas fa-check-circle"></i> Barley</li>
+                        <li><i class="fas fa-check-circle"></i> Root vegetables</li>
+                        <li><i class="fas fa-check-circle"></i> Berry fruits</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Peaty Soil -->
+            <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/image5.png" alt="Dark peaty soil with high organic content">
+                </div>
+                <div class="soil-content">
+                    <h3>Peaty Soil</h3>
+                    <p>Peaty soil is dark, has high organic matter, and retains large amounts of moisture.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Brassicas</li>
+                        <li><i class="fas fa-check-circle"></i> Legumes</li>
+                        <li><i class="fas fa-check-circle"></i> Salad crops</li>
+                        <li><i class="fas fa-check-circle"></i> Root vegetables</li>
+                        <li><i class="fas fa-check-circle"></i> Blueberries</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Chalky Soil -->
+            <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/image6.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Chalky Soil</h3>
+                    <p>Chalky soil is alkaline, stony, and free draining, often needing additional nutrients.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Spinach</li>
+                        <li><i class="fas fa-check-circle"></i> Beets</li>
+                        <li><i class="fas fa-check-circle"></i> Sweet corn</li>
+                        <li><i class="fas fa-check-circle"></i> Cabbage</li>
+                        <li><i class="fas fa-check-circle"></i> Lavender</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Saline Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/saline.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Saline Soil</h3>
+                    <p>High salt content, poor drainage, toxic to many plants.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Salt-tolrent grasses</li>
+                        <li><i class="fas fa-check-circle"></i> Barely</li>
+                        <li><i class="fas fa-check-circle"></i> Suger beet</li>
+                        <li><i class="fas fa-check-circle"></i> Quinoa</li>
+                        <li><i class="fas fa-check-circle"></i> Dste Palm</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Laterite Soil -->
+
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/laterite.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Laterite Soil</h3>
+                    <p>Rich in iron and aluminum, reddish, found in tropical regions.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Tea</li>
+                        <li><i class="fas fa-check-circle"></i> Coffee</li>
+                        <li><i class="fas fa-check-circle"></i> Cashew</li>
+                        <li><i class="fas fa-check-circle"></i> Rubber</li>
+                        <li><i class="fas fa-check-circle"></i> Coconut</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Volcanic Soil -->
+            <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Volcanic.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Volcanic Soil</h3>
+                    <p>Rich in minerals, fertile, good drainage.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Vegrtables</li>
+                        <li><i class="fas fa-check-circle"></i> Pineapples</li>
+                        <li><i class="fas fa-check-circle"></i> Banana</li>
+                        <li><i class="fas fa-check-circle"></i> Tea</li>
+                        <li><i class="fas fa-check-circle"></i> Coffee</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Alluvial Soil  -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Alluvial.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Clay Soil</h3>
+                    <p>Heavy, sticky when wet, hard when dry, retains water but drains poorly.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Rice</li>
+                        <li><i class="fas fa-check-circle"></i> Wheat</li>
+                        <li><i class="fas fa-check-circle"></i> Maize</li>
+                        <li><i class="fas fa-check-circle"></i> Sugercane</li>
+                        <li><i class="fas fa-check-circle"></i> Cotton</li>
+                    </ul>
+                </div>
+            </div>
+
+             <!-- Loess Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/loess.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Loess Soil</h3>
+                    <p>Fine, wind-deposited silt, fertile but prone to erosion.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Wheat</li>
+                        <li><i class="fas fa-check-circle"></i> Corns</li>
+                        <li><i class="fas fa-check-circle"></i> Soybeans</li>
+                        <li><i class="fas fa-check-circle"></i> Grapes</li>
+                        <li><i class="fas fa-check-circle"></i> Maize</li>
+                    </ul>
+                </div>
+            </div>
+
+             <!-- Marshy Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Marshy.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Marshy Soil</h3>
+                    <p>Waterlogged, high organic content, acidic.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Rice</li>
+                        <li><i class="fas fa-check-circle"></i> Water lilies</li>
+                        <li><i class="fas fa-check-circle"></i> Cattails</li>
+                        <li><i class="fas fa-check-circle"></i> Jute</li>
+                        <li><i class="fas fa-check-circle"></i> Cranberry</li>
+                    </ul>
+                </div>
+            </div>
+
+             <!--  Forest Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Forest.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3> Forest Soil</h3>
+                    <p>Rich in organic matter, acidic to neutral pH.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Ferns</li>
+                        <li><i class="fas fa-check-circle"></i> Blueberries</li>
+                        <li><i class="fas fa-check-circle"></i> Sweet corn</li>
+                        <li><i class="fas fa-check-circle"></i> Pines</li>
+                        <li><i class="fas fa-check-circle"></i> Oaks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Mountain Soil  -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Mountain.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Mountain Soil</h3>
+                    <p> Mountain Soil is Thin, rocky, well-drained, low fertility.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Alpine</li>
+                        <li><i class="fas fa-check-circle"></i> Rhododendrons</li>
+                        <li><i class="fas fa-check-circle"></i> Junipers</li>
+                        <li><i class="fas fa-check-circle"></i> Coffee</li>
+                        <li><i class="fas fa-check-circle"></i> Barley</li>
+                    </ul>
+                </div>
+            </div>
+             <!-- Black Soil  -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Black.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3> Black Soil</h3>
+                    <p> Black Soi is Rich in clay, retains moisture, fertile, ideal for cotton.</p>
+                        <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Cotton</li>
+                        <li><i class="fas fa-check-circle"></i> Soybean</li>
+                        <li><i class="fas fa-check-circle"></i> Sunflower</li>
+                        <li><i class="fas fa-check-circle"></i> Wheat</li>
+                        <li><i class="fas fa-check-circle"></i> Oilseeds</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Saline-Sodic Soil -->
+
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Salinesodic.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Saline-Sodic Soil</h3>
+                    <p>Saline-Sodic Soil is High in sodium salts, poor structure, requires reclamation.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Soil-tolrent</li>
+                        <li><i class="fas fa-check-circle"></i> Barley</li>
+                        <li><i class="fas fa-check-circle"></i> Suger beet</li>
+                        <li><i class="fas fa-check-circle"></i> Rice</li>
+                        <li><i class="fas fa-check-circle"></i> Oilseeds</li>
+                    </ul>
+                </div>
+            </div>
+             
+            <!-- Gley Soil  -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Gley.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3> Gley Soil</h3>
+                    <p> Gley Soil is Waterlogged, greyish color, poor aeration.</p>
+                    <ul class="cro p-list">
+                        <li><i class="fas fa-check-circle"></i> Jute</li>
+                        <li><i class="fas fa-check-circle"></i> Rice</li>
+                        <li><i class="fas fa-check-circle"></i> Taro</li>
+                        <li><i class="fas fa-check-circle"></i> Grasslands</li>
+                        <li><i class="fas fa-check-circle"></i> reeds</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Hydromorphic Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/hydromorphic.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Hydromorphic Soil</h3>
+                    <p>Hydromorphic Soil is Formed under waterlogged conditions, poor aeration.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Rice</li>
+                        <li><i class="fas fa-check-circle"></i> Water</li>
+                        <li><i class="fas fa-check-circle"></i> chestnut</li>
+                        <li><i class="fas fa-check-circle"></i> Lotus</li>
+                        <li><i class="fas fa-check-circle"></i> Colocasia</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!--  Brackish Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Brackish.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3> Brackish Soil</h3>
+                    <p> Brackish Soil is Mix of fresh and saltwater influence, moderate salinity.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Mangroves</li>
+                        <li><i class="fas fa-check-circle"></i> Salts marsh</li>
+                        <li><i class="fas fa-check-circle"></i> Coconut</li>
+                        <li><i class="fas fa-check-circle"></i> Rice</li>
+                        <li><i class="fas fa-check-circle"></i> Salt-tolerant</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Acidic Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Acidic.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Acidic Soil</h3>
+                    <p>Acidic Soil is Low pH, often rich in organic matter, may require liming.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Blueberries</li>
+                        <li><i class="fas fa-check-circle"></i> Azaleas</li>
+                        <li><i class="fas fa-check-circle"></i> Rhondodendrones</li>
+                        <li><i class="fas fa-check-circle"></i> Potatoes</li>
+                        <li><i class="fas fa-check-circle"></i> Tea</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Regosol Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Regosol.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Regosol Soil</h3>
+                    <p>Regosol Soil is Young, weakly developed soil with minimal horizon development.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Millet</li>
+                        <li><i class="fas fa-check-circle"></i> Sorghum</li>
+                        <li><i class="fas fa-check-circle"></i> Drought-resistant</li>
+                        <li><i class="fas fa-check-circle"></i> Maize</li>
+                        <li><i class="fas fa-check-circle"></i> Pulses</li>
+                    </ul>
+                </div>
+            </div>
+            <!--Vertisol Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Vertisol.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Vertisol Soil</h3>
+                    <p>Vertisol Soil is Clay-rich soil that swells when wet and cracks when dry.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Cotton</li>
+                        <li><i class="fas fa-check-circle"></i> Wheat</li>
+                        <li><i class="fas fa-check-circle"></i> Rice</li>
+                        <li><i class="fas fa-check-circle"></i> Sorghum</li>
+                        <li><i class="fas fa-check-circle"></i> Oilseeds</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Podzol Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Podzol.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Podzol Soil</h3>
+                    <p>Podzol Soil is Low fertility, common in coniferous forest regions</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Pine trees</li>
+                        <li><i class="fas fa-check-circle"></i> Blueberries</li>
+                        <li><i class="fas fa-check-circle"></i> Heathers</li>
+                        <li><i class="fas fa-check-circle"></i> Spruce and Larch</li>
+                        <li><i class="fas fa-check-circle"></i> Berry</li>
+                    </ul>
+                </div>
+            </div>
+            <!--Rendzina Soil  -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Rendzina.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Rendzina Soil</h3>
+                    <p>Rendzina Soil is Shallow, rich in organic matter, formed over limestone or chalk.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Grapevines</li>
+                        <li><i class="fas fa-check-circle"></i> Olives</li>
+                        <li><i class="fas fa-check-circle"></i> Cerels</li>
+                        <li><i class="fas fa-check-circle"></i> Barley</li>
+                        <li><i class="fas fa-check-circle"></i> Oats</li>
+                    </ul>
+                </div>
+            </div>
+             <!--Tundra Soil  -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Thundra.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Tundra Soil</h3>
+                    <p>Tundra Soil is Cold, permafrost-affected soil with low organic matter.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Mosses</li>
+                        <li><i class="fas fa-check-circle"></i> Lichens</li>
+                        <li><i class="fas fa-check-circle"></i> Dwarf Shrubs</li>
+                        <li><i class="fas fa-check-circle"></i> Small shrubs</li>
+                        <li><i class="fas fa-check-circle"></i> Sedges</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Anthrosol Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Anthrosol.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Anthrosol Soil</h3>
+                    <p>Anthrosol Soil is Human-influenced soil with high organic content from agriculture.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Maize</li>
+                        <li><i class="fas fa-check-circle"></i> Wheat</li>
+                        <li><i class="fas fa-check-circle"></i> Fruit</li>
+                        <li><i class="fas fa-check-circle"></i> Vegetables</li>
+                        <li><i class="fas fa-check-circle"></i> Sugercane</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Colluvial Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Colluvial.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Colluvial Soil</h3>
+                    <p>Colluvial Soil is Formed by accumulation of material at the base of slopes.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Vineyards</li>
+                        <li><i class="fas fa-check-circle"></i> Shrubs</li>
+                        <li><i class="fas fa-check-circle"></i> Millets</li>
+                        <li><i class="fas fa-check-circle"></i> Fodders crop</li>
+                        <li><i class="fas fa-check-circle"></i> Fruit trees</li>
+                    </ul>
+                </div>
+            </div>
+            <!--Chernozem Soil -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Chernozem.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Chernozem Soil </h3>
+                    <p>Chernozem Soil  is Dark, rich, high organic matter.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Wheat</li>
+                        <li><i class="fas fa-check-circle"></i> Corn</li>
+                        <li><i class="fas fa-check-circle"></i> Sunflowers</li>
+                        <li><i class="fas fa-check-circle"></i> Barley</li>
+                        <li><i class="fas fa-check-circle"></i> Wheat</li>
+                    </ul>
+                </div>
+            </div>
+             <!--Andisols Soil-->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Andisols.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Andisols Soil</h3>
+                    <p>Andisols soil is Volcanic ash soils, fertile and porous.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Tea</li>
+                        <li><i class="fas fa-check-circle"></i> Coffee</li>
+                        <li><i class="fas fa-check-circle"></i> Spices</li>
+                        <li><i class="fas fa-check-circle"></i> Vegetables</li>
+                        <li><i class="fas fa-check-circle"></i> Fruits tree</li>
+                    </ul>
+                </div>
+            </div>
+             <!-- Histosols -->
+             <div class="soil-card">
+                <div class="soil-image">
+                    <img src="./IMAGE/Histosols.png" alt="Chalky soil with alkaline properties and stony texture">
+                </div>
+                <div class="soil-content">
+                    <h3>Histosols Soil</h3>
+                    <p>Histosols soil isOrganic, peat-rich, waterlogged.</p>
+                    <ul class="crop-list">
+                        <li><i class="fas fa-check-circle"></i> Cranberries</li>
+                        <li><i class="fas fa-check-circle"></i> Wild rice</li>
+                        <li><i class="fas fa-check-circle"></i> Wetlands</li>
+                        <li><i class="fas fa-check-circle"></i> Rice</li>
+                        <li><i class="fas fa-check-circle"></i> Cranberry</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We provide valuable information about soil types and their suitability for different crops to help farmers and gardeners make informed decisions.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Soil Types</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Crop Guide</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Agriculture Street, Farmville</li>
+                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@soilandcrops.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 5:00 PM</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter to receive updates on soil management and crop cultivation tips.</p>
+                <form>
+                    <input type="email" placeholder="Your Email Address" style="padding: 10px; width: 100%; margin-top: 10px; border-radius: 4px; border: none;">
+                    <button type="submit" style="background: #ff9800; color: white; border: none; padding: 10px 15px; border-radius: 4px; margin-top: 10px; cursor: pointer; width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Soil & Crops. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #ff9800;"></i> for farmers and gardeners</p>
+        </div>
+    </footer>
+    <script>
+        // Simple animation for the page elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.soil-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+            
+            // Add smooth scrolling for the CTA button
+            document.querySelector('.cta-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('#soil-types').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+            //  SEARCH FUNCTIONALITY
+    
+           document.addEventListener("DOMContentLoaded", function () {
+               const input   = document.getElementById("soilSearch");
+               const button  = document.getElementById("searchBtn");
+               const cards   = document.querySelectorAll(".soil-card");
+               const noMatch = document.getElementById("noResult");
+
+    function runSearch() {
+        const query = input.value.trim().toLowerCase();
+        let found = false;
+
+        cards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            if (!query || text.includes(query)) {
+                card.style.display = "block";
+                found = true;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        // Show “no result” message only when nothing matches
+        noMatch.style.display = found ? "none" : "block";
+    }
+
+    // Trigger search only when button is clicked or Enter is pressed
+    button.addEventListener("click", runSearch);
+    input.addEventListener("keydown", e => {
+        if (e.key === "Enter") runSearch();
+    });
+});
+    </script>
+</body>
+</html>
+
+
